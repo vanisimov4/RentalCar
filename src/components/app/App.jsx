@@ -1,6 +1,11 @@
+import { Routes, Route } from 'react-router-dom';
 // import { useState } from 'react';
 // import reactLogo from './assets/react.svg';
 // import viteLogo from '/vite.svg';
+import HomePage from '../../pages/homePage/HomePage';
+import CatalogPage from '../../pages/catalogPage/CatalogPage';
+import CarDetailsPage from '../../pages/carDetailsPage/CarDetailsPage';
+
 import './App.css';
 
 function App() {
@@ -9,7 +14,19 @@ function App() {
   return (
     <>
       fygt
-      {/* <div>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/catalog" element={<CatalogPage />} />
+        <Route path="/catalog/:id" element={<CarDetailsPage />} />
+      </Routes>
+    </>
+  );
+}
+
+export default App;
+
+{
+  /* <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -28,9 +45,5 @@ function App() {
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
-      </p> */}
-    </>
-  );
+      </p> */
 }
-
-export default App;
