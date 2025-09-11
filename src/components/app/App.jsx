@@ -1,25 +1,34 @@
-import { Routes, Route } from 'react-router-dom';
+import { lazy, Suspense } from "react";
+import { Routes, Route } from "react-router-dom";
 // import { useState } from 'react';
 // import reactLogo from './assets/react.svg';
 // import viteLogo from '/vite.svg';
-import HomePage from '../../pages/homePage/HomePage';
-import CatalogPage from '../../pages/catalogPage/CatalogPage';
-import CarDetailsPage from '../../pages/carDetailsPage/CarDetailsPage';
+import Layout from "../Layout/Layout.jsx";
 
-import './App.css';
+import css from "./App.module.css";
+
+const HomePage = lazy(() => import("../../pages/HomePage/HomePage.jsx"));
+const CatalogPage = lazy(() =>
+  import("../../pages/catalogPage/CatalogPage.jsx")
+);
+const CarDetailsPage = lazy(() =>
+  import("../../pages/carDetailsPage/CarDetailsPage.jsx")
+);
 
 function App() {
   // const [count, setCount] = useState(0);
 
   return (
-    <>
-      fygt
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/catalog" element={<CatalogPage />} />
-        <Route path="/catalog/:id" element={<CarDetailsPage />} />
-      </Routes>
-    </>
+    <Layout className={css.wrapper}>
+      <h1>Find your perfect rental car</h1>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/catalog" element={<CatalogPage />} />
+          <Route path="/catalog/:id" element={<CarDetailsPage />} />
+        </Routes>
+      </Suspense>
+    </Layout>
   );
 }
 
