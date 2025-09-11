@@ -1,10 +1,10 @@
-// import AppBar from "../AppBar/AppBar";
-import css from "./Layuot.module.css";
+import AppBar from '../AppBar/AppBar';
+import css from './Layuot.module.css';
 
 export default function Layout({ children }) {
   return (
     <div className={css.container}>
-      {/* <AppBar /> */}
+      <AppBar />
       {children}
     </div>
   );
