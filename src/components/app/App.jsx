@@ -1,18 +1,18 @@
-import { lazy, Suspense } from "react";
-import { Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from 'react';
+import { Routes, Route } from 'react-router-dom';
 // import { useState } from 'react';
 // import reactLogo from './assets/react.svg';
 // import viteLogo from '/vite.svg';
-import Layout from "../Layout/Layout.jsx";
+import Layout from '../Layout/Layout.jsx';
 
-import css from "./App.module.css";
+import css from './App.module.css';
 
-const HomePage = lazy(() => import("../../pages/HomePage/HomePage.jsx"));
+const HomePage = lazy(() => import('../../pages/HomePage/HomePage.jsx'));
 const CatalogPage = lazy(() =>
-  import("../../pages/catalogPage/CatalogPage.jsx")
+  import('../../pages/CatalogPage/CatalogPage.jsx')
 );
 const CarDetailsPage = lazy(() =>
-  import("../../pages/carDetailsPage/CarDetailsPage.jsx")
+  import('../../pages/CarDetailsPage/CarDetailsPage.jsx')
 );
 
 function App() {
@@ -20,7 +20,6 @@ function App() {
 
   return (
     <Layout className={css.wrapper}>
-      <h1>Find your perfect rental car</h1>
       <Suspense fallback={null}>
         <Routes>
           <Route path="/" element={<HomePage />} />
