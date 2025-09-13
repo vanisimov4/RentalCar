@@ -6,7 +6,7 @@ import css from './CarsList.module.css';
 
 const CarsList = () => {
   const visibleCars = useSelector(selectCars);
-  console.log(visibleCars);
+  //   console.log(visibleCars);
 
   return (
     <ul className={css.carsList}>

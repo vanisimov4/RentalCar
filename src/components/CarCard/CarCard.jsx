@@ -44,14 +44,14 @@ const Car = ({ car }) => {
           </div>
           <div className={css.row}>
             <span>{car.type}</span>
-            <span>{car.mileage} km</span>
+            <span>{car.mileage.toLocaleString('uk-UA')} km</span>
           </div>
         </div>
       </div>
       <div></div>
       <button
         className={css.btn}
-        onClick={() => navigate(`/catalog/${car._id}`)}
+        onClick={() => navigate(`/catalog/${car.id}`)}
       >
         Read more
       </button>
