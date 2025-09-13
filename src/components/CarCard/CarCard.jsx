@@ -5,6 +5,17 @@ import css from './CarCard.module.css';
 const Car = ({ car }) => {
   const navigate = useNavigate();
 
+  // функція для розбору адреси
+  const parseAddress = address => {
+    if (!address) return { city: '', country: '' };
+    const parts = address.split(',').map(s => s.trim());
+    const country = parts.at(-1) || '';
+    const city = parts.length > 1 ? parts.at(-2) : '';
+    return { city, country };
+  };
+
+  const { city, country } = parseAddress(car.address);
+
   //   const dispatch = useDispatch();
 
   //   const handleDelete = () => dispatch(deleteContact(id));
@@ -24,6 +35,17 @@ const Car = ({ car }) => {
             <span className={css.year}>{car.year}</span>
           </p>
           <span className={css.price}>${car.rentalPrice}</span>
+        </div>
+        <div className={css.carMeta}>
+          <div className={css.row}>
+            <span>{city}</span>
+            <span>{country}</span>
+            <span>{car.rentalCompany}</span>
+          </div>
+          <div className={css.row}>
+            <span>{car.type}</span>
+            <span>{car.mileage} km</span>
+          </div>
         </div>
       </div>
       <div></div>

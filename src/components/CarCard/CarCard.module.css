@@ -10,12 +10,15 @@
     rgba(18, 20, 23, 0.5) 2.5%,
     rgba(18, 20, 23, 0) 41.07%
   );
+  margin-bottom: 16px;
 }
 
 .caption {
   display: flex;
   justify-content: space-between; /* ліво-праве вирівнювання */
   align-items: center;
+  padding-right: 10px;
+  margin-bottom: 8px;
 }
 
 .info span {
@@ -30,12 +33,42 @@
 }
 
 .model {
-  color: var(--light-blue);
+  color: var(--blue-light);
+}
+
+.carMeta {
+  font-size: 14px;
+  color: var(--gray);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 28px;
+}
+
+.carMeta .row {
+  display: flex;
+  gap: 6px;
+  font-family: Manrope;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+
+  line-height: 16px;
+  letter-spacing: 0%;
+}
+
+.carMeta .row span {
+  position: relative;
+  padding-right: 6px;
+}
+
+.carMeta .row span:not(:last-child) {
+  border-right: 1px solid var(--gray-light);
 }
 
 .btn {
   width: 100%;
-  background: var(--light-blue);
+  background: var(--blue-light);
 
   height: 44;
 
