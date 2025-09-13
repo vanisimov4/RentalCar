@@ -6,7 +6,7 @@
   padding: 8px 0;
   margin-bottom: 16px;
   width: 100%;
-  background-color: #f2f4f7;
+  background-color: var(--badges);
   /* border-bottom: 1px solid #2a363b; */
 }
 

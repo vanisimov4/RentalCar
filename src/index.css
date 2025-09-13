@@ -4,6 +4,11 @@
   line-height: 1.5;
   font-weight: 400;
 
+  --white: #ffffff;
+  --badges: #f2f4f7;
+  --light-blue: #3470ff;
+  --darck-blue: #0b44cd;
+
   /* color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424; */
