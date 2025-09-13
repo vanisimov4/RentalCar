@@ -1,5 +1,6 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-family: 'Manrope', sans-serif;
+  --second-family: 'Inter', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -7,10 +8,10 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424; */
 
-  font-synthesis: none;
+  /* font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
 }
 
 *,
@@ -22,6 +23,7 @@
 }
 
 body {
+  font-family: var(--font-family);
   /* min-width: 320px;
   min-height: 100vh; */
 }

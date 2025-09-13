@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import clsx from 'clsx';
 
+import Logo from '../Logo/Logo';
 import css from './AppBar.module.css';
 
 const buildLinkClass = ({ isActive }) => {
@@ -10,7 +11,8 @@ const buildLinkClass = ({ isActive }) => {
 export default function AppBar() {
   return (
     <header className={`${css.header} container`}>
-      <p className={css.logo}>RentalCar</p>
+      <Logo className={css.logo} />
+      {/* <p className={css.logo}>RentalCar</p> */}
       <nav className={css.nav}>
         <NavLink className={buildLinkClass} to="/">
           Home
