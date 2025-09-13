@@ -24,7 +24,7 @@ const Car = ({ car }) => {
     <div className={css.carCard}>
       <img
         src={car.img || '/placeholder.jpg'}
-        alt={car.name}
+        alt={car.description}
         className={css.image}
       />
       <div className={css.cardContent}>
