@@ -13,7 +13,6 @@ const CarsList = () => {
       {visibleCars.map(car => {
         return (
           <li key={car.id}>
-            <p>1</p>
             <CarCard car={car} />
           </li>
         );
