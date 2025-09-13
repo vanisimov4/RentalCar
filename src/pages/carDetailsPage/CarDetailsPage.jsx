@@ -3,17 +3,30 @@ import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { fetchCarDetails } from '../../redux/operations';
+import {
+  selectCarDetails,
+  selectLoading,
+  selectError,
+} from '../../redux/selectors';
 import css from './CarDetailsPage.module.css';
 
 const CarDetailsPage = () => {
   const { id } = useParams();
+  const loading = useSelector(selectLoading);
+  const error = useSelector(selectError);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchCarDetails(id));
   }, [id, dispatch]);
 
-  return;
+  return (
+    <div className={`container`}>
+      {loading && <p>Loading car details...</p>}
+      {error && <p>{error}</p>}
+      {/* {cars.length && <CarsList />} */}
+    </div>
+  );
 };
 
 export default CarDetailsPage;

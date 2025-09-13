@@ -13,7 +13,7 @@ export const fetchCars = createAsyncThunk(
     } catch (error) {
       // При помилці запиту повертаємо проміс
       // який буде відхилений з текстом помилки
-      return thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.message || 'Something went wrong');
     }
   }
 );
@@ -27,7 +27,7 @@ export const fetchCarDetails = createAsyncThunk(
       // setRecipe(data.data || data);
     } catch (error) {
       // toast.error('Something went wrong');
-      return thunkAPI.rejectWithValue(error.response?.data?.data?.message);
+      return thunkAPI.rejectWithValue(error.message || 'Something went wrong');
     }
   }
 );
