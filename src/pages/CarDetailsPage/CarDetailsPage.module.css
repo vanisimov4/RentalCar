@@ -1,0 +1,14 @@
+.wrap {
+  display: flex;
+  gap: 72px;
+}
+
+.leftColumn {
+  margin-top: 84px;
+  width: 640px;
+}
+
+.rightColumn {
+  margin-top: 104px;
+  width: 640px;
+}

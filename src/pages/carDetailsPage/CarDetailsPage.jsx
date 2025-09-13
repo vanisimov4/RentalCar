@@ -9,6 +9,7 @@ import {
   selectError,
 } from '../../redux/selectors';
 import CarImage from '../../components/CarDetails/CarImage/CarImage';
+import BookForm from '../../components/CarDetails/BookForm/BookForm';
 import css from './CarDetailsPage.module.css';
 
 const CarDetailsPage = () => {
@@ -27,7 +28,16 @@ const CarDetailsPage = () => {
       {loading && <p>Loading car details...</p>}
       {error && <p>{error}</p>}
       {!loading && !error && carDetails && (
-        <CarImage src={carDetails.img} alt={carDetails.description} />
+        <div className={css.wrap}>
+          <div className={css.leftColumn}>
+            <CarImage src={carDetails.img} alt={carDetails.description} />
+            <BookForm />
+          </div>
+          <div className={css.rightColumn}>
+            <CarImage src={carDetails.img} alt={carDetails.description} />
+            <BookForm />
+          </div>
+        </div>
       )}
     </div>
   );
