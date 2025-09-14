@@ -4,3 +4,24 @@
   display: flex;
   gap: 16px;
 }
+
+.btn {
+  width: 156px;
+  height: 44px;
+  background-color: var(--blue-light);
+  color: var(--white);
+  border-radius: 12px;
+
+  padding-top: 12px;
+  padding-right: 51px;
+  padding-bottom: 12px;
+  padding-left: 51px;
+
+  font-family: Manrope;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 16px;
+
+  line-height: 20px;
+  letter-spacing: 0%;
+}
