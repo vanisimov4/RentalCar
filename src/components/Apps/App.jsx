@@ -16,8 +16,6 @@ const CarDetailsPage = lazy(() =>
 );
 
 function App() {
-  // const [count, setCount] = useState(0);
-
   return (
     <Layout className={css.wrapper}>
       <Suspense fallback={null}>

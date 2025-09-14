@@ -1,13 +1,17 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const slice = createSlice({
-  name: "filters",
+  name: 'filters',
   initialState: {
-    brand: "",
+    selectedBrand: null,
+    selectedYear: null,
+    brands: [], // сюди кладемо довідкові бренди
+    loading: false,
+    error: null,
   },
   reducers: {
     changeFilter(state, action) {
-      state.name = action.payload;
+      state.brands = action.payload;
     },
   },
 });
