@@ -7,7 +7,7 @@ import Layout from '../Layout/Layout.jsx';
 
 import css from './App.module.css';
 
-const HomePage = lazy(() => import('../../pages/HomePage/HomePage.jsx'));
+const HomePage = lazy(() => import('../../pages/HomesPage/HomePage.jsx'));
 const CatalogPage = lazy(() =>
   import('../../pages/CatalogPage/CatalogPage.jsx')
 );

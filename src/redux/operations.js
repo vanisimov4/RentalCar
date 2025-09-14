@@ -25,9 +25,20 @@ export const fetchCarDetails = createAsyncThunk(
     try {
       const response = await axios.get(`/cars/${id}`);
       return response.data;
-      // setRecipe(data.data || data);
     } catch (error) {
       // toast.error('Something went wrong');
+      return thunkAPI.rejectWithValue(error.message || 'Something went wrong');
+    }
+  }
+);
+
+export const fetchBrands = createAsyncThunk(
+  'cars/fetchBrands',
+  async (_, thunkAPI) => {
+    try {
+      const response = await axios.get('/brands');
+      return response.data;
+    } catch (error) {
       return thunkAPI.rejectWithValue(error.message || 'Something went wrong');
     }
   }
