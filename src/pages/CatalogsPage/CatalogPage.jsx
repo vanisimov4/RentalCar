@@ -22,12 +22,10 @@ const CatalogPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // console.log(page + 1);
     dispatch(fetchCars(page));
   }, [dispatch]);
 
   const handleLoadMore = () => {
-    // console.log(page + 1);
     dispatch(fetchCars(page + 1));
   };
 

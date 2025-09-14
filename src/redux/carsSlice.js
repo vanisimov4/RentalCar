@@ -22,11 +22,11 @@ const carsSlice = createSlice({
     error: null,
   },
   reducers: {
-    resetCars(state) {
-      state.items = [];
-      state.page = 1;
-      state.totalPages = 0;
-    },
+    // resetCars(state) {
+    //   state.items = [];
+    //   state.page = 1;
+    //   state.totalPages = 0;
+    // },
   },
   extraReducers: builder => {
     builder
@@ -34,7 +34,20 @@ const carsSlice = createSlice({
       .addCase(fetchCars.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.items = [...state.items, ...action.payload.cars];
+        const newCars = action.payload.cars || []; // на випадок отримання null, або undefined
+
+        if (Number(action.payload.page) === 1) {
+          // перша сторінка — замінюємо список
+          state.items = newCars;
+        } else {
+          // наступні сторінки — додаємо, уникаючи дублів
+          state.items = [
+            ...state.items,
+            ...newCars.filter(
+              car => !state.items.some(item => item.id === car.id)
+            ),
+          ];
+        }
         state.page = Number(action.payload.page); // 👈 приводимо до числа
         state.totalCars = action.payload.totalCars;
         state.totalPages = action.payload.totalPages;
@@ -49,5 +62,5 @@ const carsSlice = createSlice({
   },
 });
 
-export const { resetCars } = carsSlice.actions;
+// export const { resetCars } = carsSlice.actions;
 export default carsSlice.reducer;
