@@ -12,7 +12,7 @@ const CatalogPage = lazy(() =>
   import('../../pages/CatalogsPage/CatalogPage.jsx')
 );
 const CarDetailsPage = lazy(() =>
-  import('../../pages/CarDetailsPage/CarDetailsPage.jsx')
+  import('../../pages/CarsDetailsPage/CarDetailsPage.jsx')
 );
 
 function App() {
