@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { fetchBrands } from './operations.js';
 
 const slice = createSlice({
   name: 'filters',
@@ -13,6 +14,22 @@ const slice = createSlice({
     changeFilter(state, action) {
       state.brands = action.payload;
     },
+  },
+  extraReducers: builder => {
+    builder
+      .addCase(fetchBrands.pending, state => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchBrands.fulfilled, (state, action) => {
+        state.loading = false;
+        state.brands = action.payload;
+        state.error = null;
+      })
+      .addCase(fetchBrands.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      });
   },
 });
 
