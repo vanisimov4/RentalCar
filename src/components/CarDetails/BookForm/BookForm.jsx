@@ -1,4 +1,4 @@
-import { Formik, Form, Field } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
 import css from './BookForm.module.css';
@@ -33,34 +33,48 @@ export default function BookForm() {
         onSubmit={handleSubmit}
       >
         <Form className={css.form} autoComplete="off">
-          <div className="form-group">
+          <div className={css.formGroup}>
             <Field
               type="text"
               name="name"
               placeholder="Name*"
               className="input"
             />
-            {/* <ErrorMessage name="name" component="div" className="error" /> */}
+            <ErrorMessage name="name" component="div" className={css.error} />
           </div>
-          <label className={css.label}>
-            Email
-            <Field type="email" name="email" />
-          </label>
-          <label className={css.label}>
-            Passowrd
-            <Field type="date" name="bookingDate" />
-          </label>
-          <label className={css.label}>
-            Passowrd
+          <div className={css.formGroup}>
+            <Field
+              type="email"
+              name="email"
+              placeholder="Email*"
+              className="input"
+            />
+            <ErrorMessage name="email" component="div" className={css.error} />
+          </div>
+          <div className={css.formGroup}>
+            <Field
+              type="date"
+              name="bookingDate"
+              placeholder="Booking date"
+              className="input"
+            />
+            <ErrorMessage name="date" component="div" className={css.error} />
+          </div>
+          <div className={css.formGroup}>
             <Field
               as="textarea"
-              id="message"
-              name="message"
-              rows="4"
+              name="comment"
               placeholder="Comment"
+              className="input textarea"
             />
-          </label>
-          <button type="submit">Register</button>
+            <ErrorMessage
+              name="comment"
+              component="div"
+              className={css.error}
+            />
+          </div>
+
+          <button type="submit">Send</button>
         </Form>
       </Formik>
     </div>
