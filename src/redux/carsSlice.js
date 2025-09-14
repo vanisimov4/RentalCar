@@ -21,14 +21,20 @@ const carsSlice = createSlice({
     isLoading: false,
     error: null,
   },
-  // Додаємо обробку зовнішніх екшенів
+  reducers: {
+    resetCars(state) {
+      state.items = [];
+      state.page = 1;
+      state.totalPages = 0;
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(fetchCars.pending, handlePending)
       .addCase(fetchCars.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.items = action.payload.cars;
+        state.items = [...state.items, ...action.payload.cars];
         state.page = Number(action.payload.page); // 👈 приводимо до числа
         state.totalCars = action.payload.totalCars;
         state.totalPages = action.payload.totalPages;
@@ -43,4 +49,5 @@ const carsSlice = createSlice({
   },
 });
 
+export const { resetCars } = carsSlice.actions;
 export default carsSlice.reducer;
