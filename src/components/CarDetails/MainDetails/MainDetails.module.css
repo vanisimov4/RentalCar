@@ -1,0 +1,59 @@
+.row {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* відстань між h2 і span */
+  margin-bottom: 8px;
+}
+
+.title {
+  font-family: Manrope;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 24px;
+
+  line-height: 32px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.id {
+  font-family: Manrope;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  color: var(--gray);
+  line-height: 20px;
+  letter-spacing: 0%;
+}
+
+.mainInfo {
+  font-family: Manrope;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+
+  line-height: 20px;
+  letter-spacing: 0%;
+}
+
+.price {
+  font-family: Manrope;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 24px;
+  color: var(--blue-light);
+  line-height: 32px;
+  letter-spacing: 0%;
+  margin-top: 16px;
+}
+
+.description {
+  font-family: Manrope;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  color: var(--black);
+  line-height: 20px;
+  letter-spacing: 0%;
+  margin-top: 32px;
+}

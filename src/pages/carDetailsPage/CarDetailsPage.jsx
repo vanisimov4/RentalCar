@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { fetchCarDetails } from '../../redux/operations';
@@ -10,6 +10,8 @@ import {
 } from '../../redux/selectors';
 import CarImage from '../../components/CarDetails/CarImage/CarImage';
 import BookForm from '../../components/CarDetails/BookForm/BookForm';
+import MainDetails from '../../components/CarDetails/MainDetails/MainDetails';
+import DetailsList from '../../components/CarDetails/DetailsList/DetailsList';
 import css from './CarDetailsPage.module.css';
 
 const CarDetailsPage = () => {
@@ -34,8 +36,13 @@ const CarDetailsPage = () => {
             <BookForm />
           </div>
           <div className={css.rightColumn}>
-            <CarImage src={carDetails.img} alt={carDetails.description} />
-            <BookForm />
+            <MainDetails carDetails={carDetails} />
+            <div className={css.features}>
+              <div>
+                <h3>Rental Conditions: </h3>
+                <DetailsList features={carDetails.rentalConditions} />
+              </div>
+            </div>
           </div>
         </div>
       )}

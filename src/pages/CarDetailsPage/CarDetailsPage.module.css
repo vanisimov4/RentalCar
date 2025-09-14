@@ -12,3 +12,18 @@
   margin-top: 104px;
   width: 640px;
 }
+
+.features {
+  margin-top: 68px;
+  gap: 110px;
+}
+
+h3 {
+  font-family: Manrope;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 20px;
+
+  line-height: 24px;
+  letter-spacing: 0%;
+}
