@@ -5,9 +5,10 @@ axios.defaults.baseURL = 'https://car-rental-api.goit.global/';
 
 export const fetchCars = createAsyncThunk(
   'cars/fetchAll',
-  async (_, thunkAPI) => {
+  async (page, thunkAPI) => {
     try {
-      const response = await axios.get('/cars');
+      // console.log(page);
+      const response = await axios.get(`/cars?page=${page}`);
       // При успішному запиті повертаємо проміс із даними
       return response.data;
     } catch (error) {

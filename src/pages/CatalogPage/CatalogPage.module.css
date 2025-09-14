@@ -1,0 +1,21 @@
+.btn {
+  display: block;
+  margin: 80px auto 0; /* зверху 24px, автоматичні відступи зліва/справа */
+  width: 156px;
+  height: 44px;
+  border: 1px solid var(--blue-light);
+  border-radius: 12px;
+  border-width: 1px;
+  background-color: var(--white);
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  font-family: Manrope;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 16px;
+
+  line-height: 20px;
+  letter-spacing: 0%;
+  margin-bottom: 124px;
+}

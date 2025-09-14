@@ -15,7 +15,7 @@ const carsSlice = createSlice({
   initialState: {
     items: [],
     CarDetails: null,
-    page: 0,
+    page: 1,
     totalCars: 0,
     totalPages: 0,
     isLoading: false,
@@ -29,7 +29,7 @@ const carsSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.items = action.payload.cars;
-        state.page = action.payload.page;
+        state.page = Number(action.payload.page); // 👈 приводимо до числа
         state.totalCars = action.payload.totalCars;
         state.totalPages = action.payload.totalPages;
       })
