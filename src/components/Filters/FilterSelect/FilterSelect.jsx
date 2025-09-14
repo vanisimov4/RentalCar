@@ -1,6 +1,6 @@
 import css from './FilterSelect.module.css';
 
-export default function Filters() {
+export default function Filters({ brands }) {
   //   const handleChange = e => {
   //     // setSelected(e.target.value);
   //   };
@@ -13,11 +13,11 @@ export default function Filters() {
         //   value={selected} onChange={handleChange}
       >
         <option value="">Choose a brand</option>
-        {/* {options.map(option => (
-          <option key={option.id} value={option.id}>
-            {option.name}
+        {(brands || []).map(brand => (
+          <option key={brand} value={brand}>
+            {brand}
           </option>
-        ))} */}
+        ))}
       </select>
 
       {/* {selected && (

@@ -33,7 +33,7 @@ export const fetchCarDetails = createAsyncThunk(
 );
 
 export const fetchBrands = createAsyncThunk(
-  'cars/fetchBrands',
+  'filters/fetchBrands',
   async (_, thunkAPI) => {
     try {
       const response = await axios.get('/brands');
