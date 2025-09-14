@@ -1,0 +1,6 @@
+.wrapper {
+  margin: 84px auto 56px;
+  width: 924px;
+  display: flex;
+  gap: 16px;
+}

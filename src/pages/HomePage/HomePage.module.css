@@ -9,6 +9,15 @@
 }
 
 .text {
+  font-family: Manrope;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 24px;
+
+  line-height: 32px;
+  letter-spacing: 0%;
+  text-align: center;
+
   color: var(--white);
 }
 
@@ -20,6 +29,7 @@
   letter-spacing: 0%;
   /* text-align: center;
 vertical-align: middle; */
+  margin-bottom: 16px;
 }
 
 .btn {
@@ -34,4 +44,14 @@ vertical-align: middle; */
   padding-left: 99px;
   background: var(--blue-light);
   color: var(--white);
+
+  font-family: Manrope;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 16px;
+
+  line-height: 20px;
+  letter-spacing: 0%;
+
+  margin-top: 40px;
 }
