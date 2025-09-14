@@ -1,6 +1,7 @@
 .wrap {
   display: flex;
   gap: 72px;
+  margin-bottom: 104px;
 }
 
 .leftColumn {
@@ -14,6 +15,8 @@
 }
 
 .features {
+  display: flex;
+  flex-direction: column;
   margin-top: 68px;
   gap: 110px;
 }
@@ -26,4 +29,5 @@ h3 {
 
   line-height: 24px;
   letter-spacing: 0%;
+  margin-bottom: 20px;
 }

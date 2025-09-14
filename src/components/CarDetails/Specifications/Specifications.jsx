@@ -1,8 +1,12 @@
 import css from './Specifications.module.css';
-export default function Specifications() {
+
+export default function Specifications({ carDetails }) {
   return (
-    // <div className={css.recipeImageContainer}>
-    // <img className={css.carImage} src={src} alt={alt} />
-    // </div>
+    <ul className={css.detailsList}>
+      <li>Year: {carDetails.year}</li>
+      <li>Type: {carDetails.type}</li>
+      <li>Fuel Consumption: {carDetails.fuelConsumption}</li>
+      <li>Engine Size: {carDetails.engineSize}</li>
+    </ul>
   );
 }

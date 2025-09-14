@@ -12,6 +12,7 @@ import CarImage from '../../components/CarDetails/CarImage/CarImage';
 import BookForm from '../../components/CarDetails/BookForm/BookForm';
 import MainDetails from '../../components/CarDetails/MainDetails/MainDetails';
 import DetailsList from '../../components/CarDetails/DetailsList/DetailsList';
+import Specifications from '../../components/CarDetails/Specifications/Specifications';
 import css from './CarDetailsPage.module.css';
 
 const CarDetailsPage = () => {
@@ -41,6 +42,19 @@ const CarDetailsPage = () => {
               <div>
                 <h3>Rental Conditions: </h3>
                 <DetailsList features={carDetails.rentalConditions} />
+              </div>
+              <div>
+                <h3>Car Specifications: </h3>
+                <Specifications carDetails={carDetails} />
+              </div>
+              <div>
+                <h3>Accessories and functionalities: </h3>
+                <DetailsList
+                  features={[
+                    ...carDetails.accessories,
+                    ...carDetails.functionalities,
+                  ]}
+                />
               </div>
             </div>
           </div>
